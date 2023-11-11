@@ -44,7 +44,6 @@ const resolvers = {
           { $addToSet: { savedBooks: input } },
           { new: true }
         ).populate('savedBooks');
-
         return updatedUser;
       }
       throw AuthenticationError;
@@ -56,7 +55,6 @@ const resolvers = {
           { $pull: { savedBooks: { bookId: bookId } } },
           { new: true }
         ).populate('savedBooks');
-
         return updatedUser;
       }
       throw AuthenticationError;
